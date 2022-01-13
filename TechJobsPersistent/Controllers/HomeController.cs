@@ -70,7 +70,8 @@ namespace TechJobsPersistent.Controllers
                 
             }
 
-            return Redirect("/Index");
+            List<Job> jobs = context.Jobs.Include(j => j.Employer).ToList();
+            return View("Index", jobs);
 
         }
 

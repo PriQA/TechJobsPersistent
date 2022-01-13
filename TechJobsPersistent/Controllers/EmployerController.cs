@@ -58,7 +58,8 @@ namespace TechJobsPersistent.Controllers
                 return View("Index", employers);
             }
 
-            return View("Add", addEmployerViewModel);
+            ViewBag.employers = context.Employers.ToList();
+            return View();
         }
     
 
